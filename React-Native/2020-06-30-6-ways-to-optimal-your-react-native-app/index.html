@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>6 bước để tối ưu ứng dụng React Native của bạn - OzuIT Blog</title>
+
+
+    <meta name="description" content="Theo thống kê từ Google có khoảng 53% người dùng sẽ rời khỏi ứng dụng di động nếu mất hơn 3 giây để tải. Điều này có nghĩa là với mỗi giây ứng dụng của bạn tải thất bại thì bạn sẽ mất đi một lượng khá">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6 bước để tối ưu ứng dụng React Native của bạn">
+<meta property="og:url" content="https://ozuit.github.io/React-Native/2020-06-30-6-ways-to-optimal-your-react-native-app/index.html">
+<meta property="og:site_name" content="OzuIT Blog">
+<meta property="og:description" content="Theo thống kê từ Google có khoảng 53% người dùng sẽ rời khỏi ứng dụng di động nếu mất hơn 3 giây để tải. Điều này có nghĩa là với mỗi giây ứng dụng của bạn tải thất bại thì bạn sẽ mất đi một lượng khá">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ozuit.github.io/gallery/thumbnails/react-native-speed-up.jpg">
+<meta property="article:published_time" content="2020-06-30T15:50:03.000Z">
+<meta property="article:modified_time" content="2024-03-11T07:54:03.535Z">
+<meta property="article:author" content="OzuIT">
+<meta property="article:tag" content="React Native">
+<meta property="article:tag" content="Optimal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ozuit.github.io/gallery/thumbnails/react-native-speed-up.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/icon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180820754-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180820754-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="OzuIT Blog" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <!-- <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/icon.svg" alt="6 bước để tối ưu ứng dụng React Native của bạn" height="28">
+            
+            </a>
+        </div> -->
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/wedding">My love</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/react-native-speed-up.jpg" alt="6 bước để tối ưu ứng dụng React Native của bạn">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-06-30T15:50:03.000Z">2020-06-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/React-Native/">React Native</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 minutes read (About 1503 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                6 bước để tối ưu ứng dụng React Native của bạn
+            
+        </h1>
+        <div class="content">
+            <p>Theo thống kê từ Google có khoảng 53% người dùng sẽ rời khỏi ứng dụng di động nếu mất hơn 3 giây để tải. Điều này có nghĩa là với mỗi giây ứng dụng của bạn tải thất bại thì bạn sẽ mất đi một lượng khách hàng tiềm năng. Trong bài viết này, chúng ta sẽ thảo luận về các phương pháp để tối ưu hiệu suất hoạt động của ứng dụng di động được viết bằng React Native.</p>
+<a id="more"></a>
+<h2 id="1-Su-dung-shouldComponentUpdate-hoac-PureComponent"><a href="#1-Su-dung-shouldComponentUpdate-hoac-PureComponent" class="headerlink" title="1. Sử dụng shouldComponentUpdate hoặc PureComponent"></a>1. Sử dụng shouldComponentUpdate hoặc PureComponent</h2><p>Đối với các component thông thường, trong một vài trường hợp chúng ta không muốn bị render lại thì việc sử dụng phương thức <strong>shouldComponentUpdate</strong> sẽ là một giải pháp hiệu quả giúp bạn xử lý vấn đề này bằng cách cho giá trị trả về của phương thức này bằng false sẽ ngăn component render lại.<br><strong>PureComponent</strong> hoàn toàn tương tự với Component thông thường ngoài trừ việc nó sẽ xử lý shouldComponentUpdate giúp bạn.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.props.firstProp === nextProps. firstProp &amp;&amp;</span><br><span class="line">      <span class="keyword">this</span>.props.secondProp === nextProps.secondProp) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Su-dung-thuoc-tinh-key-cho-moi-muc-trong-danh-sach-duoc-render"><a href="#2-Su-dung-thuoc-tinh-key-cho-moi-muc-trong-danh-sach-duoc-render" class="headerlink" title="2. Sử dụng thuộc tính key cho mỗi mục trong danh sách được render"></a>2. Sử dụng thuộc tính key cho mỗi mục trong danh sách được render</h2><p>Danh sách là thứ được sử dụng thường xuyên nhất trong mọi ứng dụng. Nếu bạn không đặt thuộc tính key cho mỗi mục trong danh sách thì React sẽ render lại toàn bộ các mục trong danh sách khi có bất kỳ một mục nào được thêm vào hoặc xoá ra khỏi danh sách. Khi có thuộc tính key thì react sẽ hạn chế render lại toàn bộ danh sách mà chỉ render lại những mục thay đổi.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.props.data.map(<span class="function">(<span class="params">item, i</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">key</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span>&#123;item.title&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Thuc-hien-bind-trong-constructor-va-khong-tao-ham-trong-render"><a href="#3-Thuc-hien-bind-trong-constructor-va-khong-tao-ham-trong-render" class="headerlink" title="3. Thực hiện bind trong constructor và không tạo hàm trong render"></a>3. Thực hiện bind trong constructor và không tạo hàm trong render</h2><p>Làm điều này:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.doWork = <span class="keyword">this</span>.doWork.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  doWork() &#123;</span><br><span class="line">    <span class="comment">// doing some work here.</span></span><br><span class="line">    <span class="comment">// this.props.dispatch....</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">onPress</span>=<span class="string">&#123;this.doWork&#125;</span>&gt;</span>Do Some Work<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Đừng làm điều này trong render:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Text onPress=&#123; () =&gt; <span class="keyword">this</span>.doWork() &#125;&gt;Do Some Work&lt;<span class="regexp">/Text&gt;</span></span><br></pre></td></tr></table></figure>
+<p>hoặc</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Text onPress=&#123; <span class="keyword">this</span>.doWork.bind(<span class="keyword">this</span>) &#125;&gt;Do Some Work&lt;<span class="regexp">/Text&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Bởi vì như vậy hàm render sẽ được gọi rất thường xuyên và mỗi lần bạn viết như 2 cách trên thì một hàm mới sẽ được tạo ra.<br>Nếu bạn muốn truyền tham số vào hàm doWork, bạn có thể cần phải tạo một component con và truyền hàm vào như một prop.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;child arg1=&#123;arg1&#125;&gt;&lt;<span class="regexp">/child&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Và trong component con sẽ viết như sau:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">doWork() &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.props.arg1);</span><br><span class="line">&#125;</span><br><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">onPress</span>=<span class="string">&#123;this.doWork&#125;</span>&gt;</span>Do Some Work<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Nếu bạn đang tạo một component ở trên cùng thì cần phải đánh đổi một ít hiệu suất nhưng code sẽ dễ đọc hơn bằng cách sử dụng closure như bên dưới. Một hàm mới sẽ được tạo ra mỗi khi render lại.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">doWork = <span class="function">(<span class="params">param</span>) =&gt;</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(param)</span><br><span class="line">&#125;</span><br><span class="line">&lt;Text onPress=&#123;<span class="keyword">this</span>.doWork(someVarParam)&#125;&gt;Do Some Work With Args&lt;<span class="regexp">/Text&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Vì vậy bạn cần cân nhắc giữa khả năng đọc code và yêu cầu hiệu suất trong những trường hợp như vậy.</p>
+<h2 id="4-Dung-cap-nhat-state-hoac-dispatch-actions-trong-componentWillUpdate"><a href="#4-Dung-cap-nhat-state-hoac-dispatch-actions-trong-componentWillUpdate" class="headerlink" title="4. Đừng cập nhật state hoặc dispatch actions trong componentWillUpdate"></a>4. Đừng cập nhật state hoặc dispatch actions trong componentWillUpdate</h2><p>Phương thức componentWillUpdate được sử dụng để chuẩn bị cho một sự thay đổi, không dùng để kích hoạt một đối tượng khác. Nếu bạn muốn setState hoặc dispatch bất kỳ redux actions nào hãy thực hiện nó trong componentWillReceiveProps.</p>
+<h2 id="5-Su-dung-VirtualizedList-FlatList-va-SectionList-cho-mot-tap-du-lieu-lon"><a href="#5-Su-dung-VirtualizedList-FlatList-va-SectionList-cho-mot-tap-du-lieu-lon" class="headerlink" title="5. Sử dụng VirtualizedList, FlatList và SectionList cho một tập dữ liệu lớn"></a>5. Sử dụng VirtualizedList, FlatList và SectionList cho một tập dữ liệu lớn</h2><p>Theo tài liệu từ React Native thì VirtualizedList, FlatList và SectionList cho hiệu suất cao hơn khi render list. Nếu bạn có một danh sách với hàng trăm dòng thì các dòng đó sẽ chỉ được hiển thị trên màn hình khi bạn cuộn xuống.<br>VirtualizedList dựa trên cả FlatList và SectionList nên nếu bạn có một tập dữ liệu bất biến thì bạn nên sử dụng trực tiếp VirtualizedList.</p>
+<h2 id="6-Su-dung-Perf-monitor-de-theo-doi-FPS"><a href="#6-Su-dung-Perf-monitor-de-theo-doi-FPS" class="headerlink" title="6. Sử dụng Perf monitor để theo dõi FPS"></a>6. Sử dụng Perf monitor để theo dõi FPS</h2><p>Hãy vào developer tool và mở perf monitor lên. Bây giờ khi bạn bắt đầu tương tác, điều hướng hoặc cuộn lên/xuống ứng dụng của bạn, bạn có thể nhìn thấy FPT bị suy giảm. Chủ yếu sự suy giảm này đến từ JS Thread chứ không từ native UI Thread. Vì vậy ta có thể tìm các điểm chết nơi FPT bị giảm, bạn có thể đã setState hoặc dispatch redux actions sai ở một vài chỗ hoặc thực hiện qúa nhiều công việc bất đồng bộ trên JS Thread.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Optimal/" rel="tag">Optimal</a>, <a class="has-link-grey -link" href="/tags/React-Native/" rel="tag">React Native</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/Javascript/2020-07-04-how-to-handle-expired-token-in-javascript/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">How to handle expired token in javascript?</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/AI/2020-04-27-build-chat-bot-with-dialogflow-part-6/">
+                <span class="level-item">Tự tạo chatbot bán hàng với Dialogflow - Phần 6 (Tạo đơn hàng tự động)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ozuit.github.io/React-Native/2020-06-30-6-ways-to-optimal-your-react-native-app/';
+        this.page.identifier = 'React-Native/2020-06-30-6-ways-to-optimal-your-react-native-app/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'ozuit-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://avatars1.githubusercontent.com/u/13793578?v=4" alt="OzuIT">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        OzuIT
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Web/App Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>HCM City - Vietnam</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            20
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            25
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ozuit" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/ozuit">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://www.facebook.com/ozu94">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/AI/" style="font-size: 16.67px;">AI</a> <a href="/tags/App-Store/" style="font-size: 10px;">App Store</a> <a href="/tags/Arrow-Function/" style="font-size: 13.33px;">Arrow Function</a> <a href="/tags/Bind/" style="font-size: 10px;">Bind</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Callback/" style="font-size: 10px;">Callback</a> <a href="/tags/Chatbot/" style="font-size: 16.67px;">Chatbot</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Dialogflow/" style="font-size: 16.67px;">Dialogflow</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Hook/" style="font-size: 10px;">Hook</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Optimal/" style="font-size: 10px;">Optimal</a> <a href="/tags/Pipeline/" style="font-size: 10px;">Pipeline</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-JS/" style="font-size: 20px;">React JS</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Redux-Tool-Kit/" style="font-size: 10px;">Redux Tool Kit</a> <a href="/tags/Responsive/" style="font-size: 10px;">Responsive</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/gRPC-web/" style="font-size: 10px;">gRPC-web</a> <a href="/tags/grpc/" style="font-size: 10px;">grpc</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/threads/" style="font-size: 10px;">threads</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/submit-multiple-apps-that-the-same-UI-to-App-Store.png" alt="Submit multiple apps that the same UI to App Store">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-07-22T13:11:46.000Z">2022-07-22</time></div>
+                    <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Submit multiple apps that the same UI to App Store</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tuts/">Tuts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="How to call child method from parent in react">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-05T13:33:24.000Z">2022-01-05</time></div>
+                    <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="title has-link-black-ter is-size-6 has-text-weight-normal">How to call child method from parent in react</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Javascript/">Javascript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/deploy-rocket.jpg" alt="Tự tạo một react component và publish lên NPM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-24T13:14:16.000Z">2020-12-24</time></div>
+                    <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tự tạo một react component và publish lên NPM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/gitlab-ci-cd.jpg" alt="Step by step to deploy code to the server with CI/CD on Gitlab">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-23T14:56:02.000Z">2020-10-23</time></div>
+                    <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Step by step to deploy code to the server with CI/CD on Gitlab</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/DevOps/">DevOps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/dependency-injection-in-react.png" alt="Dependency injection trong React với JSX và context">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-16T03:04:32.000Z">2020-09-16</time></div>
+                    <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Dependency injection trong React với JSX và context</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/AI/">
+            <span class="level-start">
+                <span class="level-item">AI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS-Magic/">
+            <span class="level-start">
+                <span class="level-item">CSS Magic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DevOps/">
+            <span class="level-start">
+                <span class="level-item">DevOps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-JS/">
+            <span class="level-start">
+                <span class="level-item">React JS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-Native/">
+            <span class="level-start">
+                <span class="level-item">React Native</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tuts/">
+            <span class="level-start">
+                <span class="level-item">Tuts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/submit-multiple-apps-that-the-same-UI-to-App-Store.png" alt="Submit multiple apps that the same UI to App Store">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-07-22T13:11:46.000Z">2022-07-22</time></div>
+                    <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Submit multiple apps that the same UI to App Store</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tuts/">Tuts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="How to call child method from parent in react">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-05T13:33:24.000Z">2022-01-05</time></div>
+                    <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="title has-link-black-ter is-size-6 has-text-weight-normal">How to call child method from parent in react</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Javascript/">Javascript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/deploy-rocket.jpg" alt="Tự tạo một react component và publish lên NPM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-24T13:14:16.000Z">2020-12-24</time></div>
+                    <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tự tạo một react component và publish lên NPM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/gitlab-ci-cd.jpg" alt="Step by step to deploy code to the server with CI/CD on Gitlab">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-23T14:56:02.000Z">2020-10-23</time></div>
+                    <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Step by step to deploy code to the server with CI/CD on Gitlab</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/DevOps/">DevOps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/dependency-injection-in-react.png" alt="Dependency injection trong React với JSX và context">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-16T03:04:32.000Z">2020-09-16</time></div>
+                    <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Dependency injection trong React với JSX và context</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/AI/">
+            <span class="level-start">
+                <span class="level-item">AI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS-Magic/">
+            <span class="level-start">
+                <span class="level-item">CSS Magic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DevOps/">
+            <span class="level-start">
+                <span class="level-item">DevOps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-JS/">
+            <span class="level-start">
+                <span class="level-item">React JS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-Native/">
+            <span class="level-start">
+                <span class="level-item">React Native</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tuts/">
+            <span class="level-start">
+                <span class="level-item">Tuts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!-- <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/icon.svg" alt="6 bước để tối ưu ứng dụng React Native của bạn" height="28">
+                
+                </a> -->
+                <p class="is-size-7">
+                &copy; 2024 OzuIT&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ozuit.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

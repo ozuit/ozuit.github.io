@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities) - OzuIT Blog</title>
+
+
+    <meta name="description" content="Entity là một cơ chế của Dialogflow giúp xác định và trích xuất các dữ liệu cần thiết từ yêu cầu của người dùng. Trong khi Intent giúp Agent có thể hiểu mục đích, ý định của người dùng thì Entity có t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities)">
+<meta property="og:url" content="https://ozuit.github.io/AI/2020-04-25-build-chat-bot-with-dialogflow-part-4/index.html">
+<meta property="og:site_name" content="OzuIT Blog">
+<meta property="og:description" content="Entity là một cơ chế của Dialogflow giúp xác định và trích xuất các dữ liệu cần thiết từ yêu cầu của người dùng. Trong khi Intent giúp Agent có thể hiểu mục đích, ý định của người dùng thì Entity có t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ozuit.github.io/gallery/thumbnails/build-chat-bot-with-dialogflow.png">
+<meta property="article:published_time" content="2020-04-25T07:58:30.000Z">
+<meta property="article:modified_time" content="2024-03-11T07:54:03.536Z">
+<meta property="article:author" content="OzuIT">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Chatbot">
+<meta property="article:tag" content="Dialogflow">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ozuit.github.io/gallery/thumbnails/build-chat-bot-with-dialogflow.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/icon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180820754-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180820754-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="OzuIT Blog" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <!-- <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/icon.svg" alt="Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities)" height="28">
+            
+            </a>
+        </div> -->
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/wedding">My love</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/build-chat-bot-with-dialogflow.png" alt="Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities)">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T07:58:30.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/AI/">AI</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 minutes read (About 1598 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities)
+            
+        </h1>
+        <div class="content">
+            <p>Entity là một cơ chế của Dialogflow giúp xác định và trích xuất các dữ liệu cần thiết từ yêu cầu của người dùng. Trong khi Intent giúp Agent có thể hiểu mục đích, ý định của người dùng thì Entity có thể giúp Agent trích xuất ra những thông tin chi tiết và cụ thể nhất của câu truy vấn. <a id="more"></a><br>Ví dụ: trong câu nói “có bán sữa bột cho trẻ em không” của người dùng thì “có bán sữa” có thể xem là một Entity về tư vấn và nó sẽ kích hoạt Intent iTuVan.</p>
+<p>Một Entities bao gồm:</p>
+<ul>
+<li>Loại Entity: định nghĩa ra loại thông tin mà ta muốn trích xuất từ câu truy vấn của người dùng.</li>
+<li>Phần tử Entity: mỗi loại Entity sẽ có nhiều phần tử, mỗi phần tử cung cấp một tập các từ hoặc cụm từ được coi là tương đương</li>
+<li>Các từ đồng nghĩa và giá trị tham chiếu với Entity: một vài phần tử Entity có nhiều từ hoặc cụm từ mà có nghĩa tương đương nhau, với những Entity này ta cần cung cấp một giá trị tham chiếu và một hoặc nhiều từ, cụm từ đồng nghĩa.</li>
+</ul>
+<p>Ở <a href="/AI/2020-04-08-build-chat-bot-with-dialogflow-part-3/">phần trước</a> chúng ta đã tạo ra các Intent để tư vấn về sản phẩm sữa bột Frisolac. Tiếp theo chúng ta cần tạo ra các Entities tương ứng tại mục Entities ở menu bên phải click vào nút CREATE ENTITY và đặt tên cho Entity đầu tiên là eTuVan (tôi đặt theo định dạng chữ ‘e’ đầu tiên để chỉ đó là một Entity và ‘TuVan’ là tên Entity). Loại Entity ta để chọn mặc định là Define synonyms, sau đó chọn <strong>Add a row</strong> sẽ xuất hiện 2 ô để nhập vào một giá trị Entity và các từ đồng nghĩa với Entity đó.</p>
+<blockquote><p><em>eTuVan</em><br>reference value: tư vấn<br>synonyms: tư vấn, muốn hỏi, cần hỏi, cần biết, muốn biết, hỏi, cho hỏi </p>
+</blockquote>
+<p>Như vậy khi người dùng nhập vào một câu có chứa các từ đồng nghĩa này thì Intent iTuVan sẽ được kích hoạt, tuy nhiên nếu người dùng không nhập vào 1 trong các từ đồng nghĩa mà ta đã nhập ở trên thì sao??? Câu trả lời là chat bot vẫn có thể nhận diện được nếu trong câu nói của người dùng có xuất hiện các từ tương tự với Entity mà ta đã định nghĩa đó là do Dialogflow xử dụng trí tuệ nhân tạo để học các từ đồng nghĩa mà ta nhập vào từ đó có thể suy luận ra các từ đồng nghĩa khác và kích hoạt Intent tương ứng. Cụ thể trong ví dụ của chúng ta thì câu nói của người dùng không chứa các từ đồng nghĩa trong eTuVan mà ta đã định nghĩa như có cụm từ “có bán sữa” là một cách nói khác với mục đích cuối cùng là muốn hỏi có bán sữa không, khi đó chat bot nhận diện được eTuVan và đã kích hoạt iTuVan thành công.</p>
+<p>Quay lại một xíu ở phần trước khi ta định nghĩa ra các <em>Training phrases</em> trong Intent iTuVan tôi cố tình nhập vào các câu có chứa các từ đồng nghĩa trong Entity eTuVan, ví dụ trong câu “cho hỏi về sữa bột cho trẻ” có chứa Entity eTuVan là từ “cho hỏi” khi đó chúng ta thấy từ này lập tức được Dialogflow highlight lên và eTuVan được tự động thêm vào mục <em>Action and parameters</em>. Như vậy mỗi khi câu nói của người dùng được Dialogflow xác định có chứa Entity eTuVan thì lập tức nó sẽ kích hoạt Intent iTuVan tương ứng.</p>
+<p>Chúng ta tiếp tục định nghĩa các Entities khác để xử lý các Intent về sản phẩm, giá bán và địa chỉ.</p>
+<blockquote><p><em>eSanPham</em><br>reference value: Physiolac<br>synonyms: Physiolac, sữa physiolac, sữa pháp, sữa bột physiolac</p>
+</blockquote>
+<blockquote><p><em>eGia</em><br>reference value: giá<br>synonyms: giá, giá bán, bao nhiêu tiền, giá bao nhiêu, giá hiện tại, bán bao nhiêu</p>
+</blockquote>
+<blockquote><p><em>eDiaChi</em><br>reference value: mua ở đâu<br>synonyms: mua ở đâu, mua, mua chỗ nào, chỗ mua</p>
+<p>reference value: bán ở đâu<br>synonyms: bán ở đâu, bán, bán chỗ nào, chỗ bán, nời nào bán</p>
+</blockquote>
+<p>Ta có thể định nghĩa nhiều phần tử Entity khác nhau trong một Entity như ở Entity eDiaChi tôi định nghĩa 2 phần tử Entity là mua ở đâu và bán ở đâu. Như vậy khi người dùng có nhu cầu hỏi về chỗ mua hoặc chỗ bán thì đều sẽ được Dialogflow nhận diện đó là Entity eTuVan. Ở phần cuối của series hướng dẫn tạo chat bot bằng Dialogflow này tôi sẽ hướng dẫn các bạn cách tích hợp chat bot mà mình đã tạo trên Dialogflow vào website của mình.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/AI/" rel="tag">AI</a>, <a class="has-link-grey -link" href="/tags/Chatbot/" rel="tag">Chatbot</a>, <a class="has-link-grey -link" href="/tags/Dialogflow/" rel="tag">Dialogflow</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/AI/2020-04-26-build-chat-bot-with-dialogflow-part-5/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Tự tạo chatbot bán hàng với Dialogflow - Phần 5 (Tích hợp vào website)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/AI/2020-04-23-build-chat-bot-with-dialogflow-part-3/">
+                <span class="level-item">Tự tạo chatbot bán hàng với Dialogflow - Phần 3 (Tạo các Intents con)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ozuit.github.io/AI/2020-04-25-build-chat-bot-with-dialogflow-part-4/';
+        this.page.identifier = 'AI/2020-04-25-build-chat-bot-with-dialogflow-part-4/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'ozuit-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://avatars1.githubusercontent.com/u/13793578?v=4" alt="OzuIT">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        OzuIT
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Web/App Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>HCM City - Vietnam</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            20
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            25
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ozuit" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/ozuit">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://www.facebook.com/ozu94">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/AI/" style="font-size: 16.67px;">AI</a> <a href="/tags/App-Store/" style="font-size: 10px;">App Store</a> <a href="/tags/Arrow-Function/" style="font-size: 13.33px;">Arrow Function</a> <a href="/tags/Bind/" style="font-size: 10px;">Bind</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Callback/" style="font-size: 10px;">Callback</a> <a href="/tags/Chatbot/" style="font-size: 16.67px;">Chatbot</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Dialogflow/" style="font-size: 16.67px;">Dialogflow</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Hook/" style="font-size: 10px;">Hook</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Optimal/" style="font-size: 10px;">Optimal</a> <a href="/tags/Pipeline/" style="font-size: 10px;">Pipeline</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-JS/" style="font-size: 20px;">React JS</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Redux-Tool-Kit/" style="font-size: 10px;">Redux Tool Kit</a> <a href="/tags/Responsive/" style="font-size: 10px;">Responsive</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/gRPC-web/" style="font-size: 10px;">gRPC-web</a> <a href="/tags/grpc/" style="font-size: 10px;">grpc</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/threads/" style="font-size: 10px;">threads</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/submit-multiple-apps-that-the-same-UI-to-App-Store.png" alt="Submit multiple apps that the same UI to App Store">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-07-22T13:11:46.000Z">2022-07-22</time></div>
+                    <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Submit multiple apps that the same UI to App Store</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tuts/">Tuts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="How to call child method from parent in react">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-05T13:33:24.000Z">2022-01-05</time></div>
+                    <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="title has-link-black-ter is-size-6 has-text-weight-normal">How to call child method from parent in react</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Javascript/">Javascript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/deploy-rocket.jpg" alt="Tự tạo một react component và publish lên NPM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-24T13:14:16.000Z">2020-12-24</time></div>
+                    <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tự tạo một react component và publish lên NPM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/gitlab-ci-cd.jpg" alt="Step by step to deploy code to the server with CI/CD on Gitlab">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-23T14:56:02.000Z">2020-10-23</time></div>
+                    <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Step by step to deploy code to the server with CI/CD on Gitlab</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/DevOps/">DevOps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/dependency-injection-in-react.png" alt="Dependency injection trong React với JSX và context">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-16T03:04:32.000Z">2020-09-16</time></div>
+                    <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Dependency injection trong React với JSX và context</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/AI/">
+            <span class="level-start">
+                <span class="level-item">AI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS-Magic/">
+            <span class="level-start">
+                <span class="level-item">CSS Magic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DevOps/">
+            <span class="level-start">
+                <span class="level-item">DevOps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-JS/">
+            <span class="level-start">
+                <span class="level-item">React JS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-Native/">
+            <span class="level-start">
+                <span class="level-item">React Native</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tuts/">
+            <span class="level-start">
+                <span class="level-item">Tuts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/submit-multiple-apps-that-the-same-UI-to-App-Store.png" alt="Submit multiple apps that the same UI to App Store">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-07-22T13:11:46.000Z">2022-07-22</time></div>
+                    <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Submit multiple apps that the same UI to App Store</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tuts/">Tuts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="How to call child method from parent in react">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-05T13:33:24.000Z">2022-01-05</time></div>
+                    <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="title has-link-black-ter is-size-6 has-text-weight-normal">How to call child method from parent in react</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Javascript/">Javascript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/deploy-rocket.jpg" alt="Tự tạo một react component và publish lên NPM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-24T13:14:16.000Z">2020-12-24</time></div>
+                    <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tự tạo một react component và publish lên NPM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/gitlab-ci-cd.jpg" alt="Step by step to deploy code to the server with CI/CD on Gitlab">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-23T14:56:02.000Z">2020-10-23</time></div>
+                    <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Step by step to deploy code to the server with CI/CD on Gitlab</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/DevOps/">DevOps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/dependency-injection-in-react.png" alt="Dependency injection trong React với JSX và context">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-09-16T03:04:32.000Z">2020-09-16</time></div>
+                    <a href="/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Dependency injection trong React với JSX và context</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/AI/">
+            <span class="level-start">
+                <span class="level-item">AI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS-Magic/">
+            <span class="level-start">
+                <span class="level-item">CSS Magic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DevOps/">
+            <span class="level-start">
+                <span class="level-item">DevOps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-JS/">
+            <span class="level-start">
+                <span class="level-item">React JS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-Native/">
+            <span class="level-start">
+                <span class="level-item">React Native</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tuts/">
+            <span class="level-start">
+                <span class="level-item">Tuts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!-- <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/icon.svg" alt="Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities)" height="28">
+                
+                </a> -->
+                <p class="is-size-7">
+                &copy; 2024 OzuIT&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ozuit.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

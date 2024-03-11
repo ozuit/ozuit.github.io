@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>OzuIT Blog</title>
+  <icon>https://ozuit.github.io/images/icon.svg</icon>
+  <subtitle>OzuIT Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://ozuit.github.io/"/>
+  <updated>2024-03-11T07:54:03.539Z</updated>
+  <id>https://ozuit.github.io/</id>
+  
+  <author>
+    <name>OzuIT</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Submit multiple apps that the same UI to App Store</title>
+    <link href="https://ozuit.github.io/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/"/>
+    <id>https://ozuit.github.io/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/</id>
+    <published>2022-07-22T13:11:46.000Z</published>
+    <updated>2024-03-11T07:54:03.539Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In this post, I wanna share with you 3 ways to submit multiple apps that have the same UI to App Store.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Tuts" scheme="https://ozuit.github.io/categories/Tuts/"/>
+    
+    
+      <category term="Mobile" scheme="https://ozuit.github.io/tags/Mobile/"/>
+    
+      <category term="App Store" scheme="https://ozuit.github.io/tags/App-Store/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to call child method from parent in react</title>
+    <link href="https://ozuit.github.io/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/"/>
+    <id>https://ozuit.github.io/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/</id>
+    <published>2022-01-05T13:33:24.000Z</published>
+    <updated>2024-03-11T07:54:03.537Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;We usually pass the props to the child component from parent and pass notifications to parent by events. But sometimes we have some abnormal cases that we need to call the child method from the parent. In this, we could use &lt;strong&gt;Refs&lt;/strong&gt; in React for solving.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Javascript" scheme="https://ozuit.github.io/categories/Javascript/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="Javascript" scheme="https://ozuit.github.io/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo một react component và publish lên NPM</title>
+    <link href="https://ozuit.github.io/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/"/>
+    <id>https://ozuit.github.io/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/</id>
+    <published>2020-12-24T13:14:16.000Z</published>
+    <updated>2024-03-11T07:54:03.538Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Chắc hẳn tất cả mọi người khi làm việc với React JS đều phải biết tới NPM, đây thật sự là một công cụ tuyệt vời để quản lý các thư viện mã nguồn mở trong thế giới Javascript nói chung và React JS nói riêng. Vậy làm thế nào để publish một component của riêng mình lên NPM?
+    
+    </summary>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/categories/React-JS/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="npm" scheme="https://ozuit.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Step by step to deploy code to the server with CI/CD on Gitlab</title>
+    <link href="https://ozuit.github.io/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/"/>
+    <id>https://ozuit.github.io/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/</id>
+    <published>2020-10-23T14:56:02.000Z</published>
+    <updated>2024-03-11T07:54:03.539Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This post will show you how to set up a pipeline on Gitlab to deploy code to the server automatically whenever a merge request is made. I will try creating a pipeline deploy code to a sandbox environment to test before doing the code merge.
+    
+    </summary>
+    
+    
+      <category term="DevOps" scheme="https://ozuit.github.io/categories/DevOps/"/>
+    
+    
+      <category term="CI/CD" scheme="https://ozuit.github.io/tags/CI-CD/"/>
+    
+      <category term="Gitlab" scheme="https://ozuit.github.io/tags/Gitlab/"/>
+    
+      <category term="Pipeline" scheme="https://ozuit.github.io/tags/Pipeline/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dependency injection trong React với JSX và context</title>
+    <link href="https://ozuit.github.io/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/"/>
+    <id>https://ozuit.github.io/React-JS/2020-09-16-dependency-injection-in-react-with-jsx-and-context/</id>
+    <published>2020-09-16T03:04:32.000Z</published>
+    <updated>2024-03-11T07:54:03.537Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Dependency injection là một dạng design pattern phổ biến được áp dụng vào để cố gắng đạt được sự không phụ thuộc giữa các object với nhau làm cho code clean hơn, dễ đọc và dễ test. Nó cũng được tích hợp sẵn trong nhiều framework lập trình như Angular, Symfony, Spring,…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/categories/React-JS/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="React Hook" scheme="https://ozuit.github.io/tags/React-Hook/"/>
+    
+      <category term="Context" scheme="https://ozuit.github.io/tags/Context/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Hook với Redux Toolkit - sự kết hợp hoàn hảo</title>
+    <link href="https://ozuit.github.io/React-JS/2020-09-10-the-perfect-combination-of-react-hook-and-redux-tool-kit/"/>
+    <id>https://ozuit.github.io/React-JS/2020-09-10-the-perfect-combination-of-react-hook-and-redux-tool-kit/</id>
+    <published>2020-09-10T03:42:29.000Z</published>
+    <updated>2024-03-11T07:54:03.539Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Nếu bạn nào đã từng sử dụng qua React chắc hẳn sẽ gặp phải những rắc rối với việc quản lý các global state, một trong những giải pháp mà đa số mọi người hay dùng đó là sử dụng Redux và bạn phải wrap mọi React component bằng higher-order connect() component, việc setup một React project với Redux trước đây khá là phức tạp.
+    
+    </summary>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/categories/React-JS/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="Redux Tool Kit" scheme="https://ozuit.github.io/tags/Redux-Tool-Kit/"/>
+    
+      <category term="Hook" scheme="https://ozuit.github.io/tags/Hook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sử dụng gRPC-Web để gọi API từ grpc server trong ứng dụng React JS</title>
+    <link href="https://ozuit.github.io/React-JS/2020-09-08-using-grpc-web-to-call-api-from-grpc-server-in-react-application/"/>
+    <id>https://ozuit.github.io/React-JS/2020-09-08-using-grpc-web-to-call-api-from-grpc-server-in-react-application/</id>
+    <published>2020-09-08T07:29:57.000Z</published>
+    <updated>2024-03-11T07:54:03.540Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Bài viết này sẽ trả lời cho các câu hỏi gRPC-Web là gì? Tại sao cần sử dụng nó? Và cách sử dụng gRPC-Web trong một ứng dụng React JS như thế nào thông qua một demo nho nhỏ. Ok, bắt đầu thôi nào!&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/categories/React-JS/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="gRPC-web" scheme="https://ozuit.github.io/tags/gRPC-web/"/>
+    
+      <category term="grpc" scheme="https://ozuit.github.io/tags/grpc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Concurrency và parallelism trong lập trình đa luồng</title>
+    <link href="https://ozuit.github.io/system/2020-08-12-concurrency-and-parallelism-in-multithreading-programing/"/>
+    <id>https://ozuit.github.io/system/2020-08-12-concurrency-and-parallelism-in-multithreading-programing/</id>
+    <published>2020-08-12T14:42:25.000Z</published>
+    <updated>2024-03-11T07:54:03.537Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Trong một bài phát biểu của Rob Pike ông đã từng nói &lt;strong&gt;“Concurrency Is Not Parallelism”&lt;/strong&gt; đây là hai khái niệm mà chúng ta thường hay gặp trong khi lập trình đa luồng và chắc chắn là nhiều bạn vẫn còn nhầm lẫn về hai khái niệm này. Vậy thì chúng ta hãy cùng nhau tìm hiểu rõ hơn thông qua bài viết này nhé!&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="system" scheme="https://ozuit.github.io/categories/system/"/>
+    
+    
+      <category term="threads" scheme="https://ozuit.github.io/tags/threads/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to handle expired token in javascript?</title>
+    <link href="https://ozuit.github.io/Javascript/2020-07-04-how-to-handle-expired-token-in-javascript/"/>
+    <id>https://ozuit.github.io/Javascript/2020-07-04-how-to-handle-expired-token-in-javascript/</id>
+    <published>2020-07-04T03:33:38.000Z</published>
+    <updated>2024-03-11T07:54:03.537Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;We often have to work with so many different APIs in a project so what if we are currently calling all three APIs at once and the token expires?&lt;br&gt;Then all three API requests will call for a token refresh, but only one API will call the token refresh successfully and the other two APIs will fail because the token refresh mechanism will cancel the expiring token as soon as it is refreshed.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Javascript" scheme="https://ozuit.github.io/categories/Javascript/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="Javascript" scheme="https://ozuit.github.io/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6 bước để tối ưu ứng dụng React Native của bạn</title>
+    <link href="https://ozuit.github.io/React-Native/2020-06-30-6-ways-to-optimal-your-react-native-app/"/>
+    <id>https://ozuit.github.io/React-Native/2020-06-30-6-ways-to-optimal-your-react-native-app/</id>
+    <published>2020-06-30T15:50:03.000Z</published>
+    <updated>2024-03-11T07:54:03.535Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Theo thống kê từ Google có khoảng 53% người dùng sẽ rời khỏi ứng dụng di động nếu mất hơn 3 giây để tải. Điều này có nghĩa là với mỗi giây ứng dụng của bạn tải thất bại thì bạn sẽ mất đi một lượng khách hàng tiềm năng. Trong bài viết này, chúng ta sẽ thảo luận về các phương pháp để tối ưu hiệu suất hoạt động của ứng dụng di động được viết bằng React Native.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="React Native" scheme="https://ozuit.github.io/categories/React-Native/"/>
+    
+    
+      <category term="React Native" scheme="https://ozuit.github.io/tags/React-Native/"/>
+    
+      <category term="Optimal" scheme="https://ozuit.github.io/tags/Optimal/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo chatbot bán hàng với Dialogflow - Phần 6 (Tạo đơn hàng tự động)</title>
+    <link href="https://ozuit.github.io/AI/2020-04-27-build-chat-bot-with-dialogflow-part-6/"/>
+    <id>https://ozuit.github.io/AI/2020-04-27-build-chat-bot-with-dialogflow-part-6/</id>
+    <published>2020-04-27T13:35:01.000Z</published>
+    <updated>2024-03-11T07:54:03.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Ở trong các phần trước tôi đã hướng dẫn các bạn tạo ra một chat bot tư vấn về sữa bột cho trẻ em, câu chuyện mới chỉ dừng lại ở việc tư vấn về giá cả hoặc địa chỉ bán sữa cho người dùng, trong phần này chúng ta sẽ tiếp tục nghiên cứu cách thu thập thông tin người dùng và chốt đơn hàng.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Chatbot" scheme="https://ozuit.github.io/tags/Chatbot/"/>
+    
+      <category term="Dialogflow" scheme="https://ozuit.github.io/tags/Dialogflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo chatbot bán hàng với Dialogflow - Phần 5 (Tích hợp vào website)</title>
+    <link href="https://ozuit.github.io/AI/2020-04-26-build-chat-bot-with-dialogflow-part-5/"/>
+    <id>https://ozuit.github.io/AI/2020-04-26-build-chat-bot-with-dialogflow-part-5/</id>
+    <published>2020-04-26T08:52:26.000Z</published>
+    <updated>2024-03-11T07:54:03.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Trong các phần trước tôi đã hướng dẫn các bạn tạo ra một chat bot cho riêng mình và chúng ta đã cùng nhau tạo ra môt chat bot cho ví dụ tư vấn về sữa bột cho trẻ em. Trong phần này tôi sẽ hướng dẫn các bạn cách tích hợp chat bot của mình vào website một cách dễ dàng.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Chatbot" scheme="https://ozuit.github.io/tags/Chatbot/"/>
+    
+      <category term="Dialogflow" scheme="https://ozuit.github.io/tags/Dialogflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo chatbot bán hàng với Dialogflow - Phần 4 (Khái niệm về Entities)</title>
+    <link href="https://ozuit.github.io/AI/2020-04-25-build-chat-bot-with-dialogflow-part-4/"/>
+    <id>https://ozuit.github.io/AI/2020-04-25-build-chat-bot-with-dialogflow-part-4/</id>
+    <published>2020-04-25T07:58:30.000Z</published>
+    <updated>2024-03-11T07:54:03.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Entity là một cơ chế của Dialogflow giúp xác định và trích xuất các dữ liệu cần thiết từ yêu cầu của người dùng. Trong khi Intent giúp Agent có thể hiểu mục đích, ý định của người dùng thì Entity có thể giúp Agent trích xuất ra những thông tin chi tiết và cụ thể nhất của câu truy vấn.
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Chatbot" scheme="https://ozuit.github.io/tags/Chatbot/"/>
+    
+      <category term="Dialogflow" scheme="https://ozuit.github.io/tags/Dialogflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo chatbot bán hàng với Dialogflow - Phần 3 (Tạo các Intents con)</title>
+    <link href="https://ozuit.github.io/AI/2020-04-23-build-chat-bot-with-dialogflow-part-3/"/>
+    <id>https://ozuit.github.io/AI/2020-04-23-build-chat-bot-with-dialogflow-part-3/</id>
+    <published>2020-04-23T13:41:31.000Z</published>
+    <updated>2024-03-11T07:54:03.536Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Để chat bot có thể ghi nhớ được thông tin từ các câu trả lời trước của người dùng ta cần định nghĩa thêm các Intent con, khi đó thông tin từ Intent cha sẽ được truyền xuống cho Intent con và chat bot có thể dựa vào đó để đưa ra các câu hỏi tương ứng tiếp thi.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Chatbot" scheme="https://ozuit.github.io/tags/Chatbot/"/>
+    
+      <category term="Dialogflow" scheme="https://ozuit.github.io/tags/Dialogflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo chatbot bán hàng với Dialogflow - Phần 2 (Khái niệm về Intents)</title>
+    <link href="https://ozuit.github.io/AI/2020-04-22-build-chat-bot-with-dialogflow-part-2/"/>
+    <id>https://ozuit.github.io/AI/2020-04-22-build-chat-bot-with-dialogflow-part-2/</id>
+    <published>2020-04-22T13:17:06.000Z</published>
+    <updated>2024-03-11T07:54:03.535Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Intent là đại diện cho một ánh xạ giữa những truy vấn mà người dùng đưa vào và hành động sẽ được thực hiện tương ứng từ hệ thống. Nói nôm na Intent là đại diện cho một mục đích, một ý định hay một yêu cầu cụ thể nào đó của người dùng.
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Chatbot" scheme="https://ozuit.github.io/tags/Chatbot/"/>
+    
+      <category term="Dialogflow" scheme="https://ozuit.github.io/tags/Dialogflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tự tạo chatbot bán hàng với Dialogflow - Phần 1</title>
+    <link href="https://ozuit.github.io/AI/2020-04-08-build-chat-bot-with-dialogflow-part-1/"/>
+    <id>https://ozuit.github.io/AI/2020-04-08-build-chat-bot-with-dialogflow-part-1/</id>
+    <published>2020-04-08T13:53:56.000Z</published>
+    <updated>2024-03-11T07:54:03.535Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Dialogflow-la-cai-gi&quot;&gt;&lt;a href=&quot;#Dialogflow-la-cai-gi&quot; class=&quot;headerlink&quot; title=&quot;Dialogflow là cái gì ?&quot;&gt;&lt;/a&gt;Dialogflow là cái gì ?&lt;/h2&gt;&lt;p&gt;Dialogflow là một dịch vụ do Google cung cấp nhằm giúp các lập trình viên có thể dễ dàng hơn trong việc lập trình ra các sản phẩm có giao tiếp với người dùng thông qua các đoạn hội thoại.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Chatbot" scheme="https://ozuit.github.io/tags/Chatbot/"/>
+    
+      <category term="Dialogflow" scheme="https://ozuit.github.io/tags/Dialogflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Responsive table with pure CSS</title>
+    <link href="https://ozuit.github.io/CSS-Magic/2020-04-05-responsive-table-with-pure-css/"/>
+    <id>https://ozuit.github.io/CSS-Magic/2020-04-05-responsive-table-with-pure-css/</id>
+    <published>2020-04-05T04:26:26.000Z</published>
+    <updated>2024-03-11T07:54:03.538Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The idea here is to turn each &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt; in &lt;code&gt;&amp;lt;t&amp;gt;&lt;/code&gt; of &lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt; into one line so each &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt; will be a block. The css below will help you do that.
+    
+    </summary>
+    
+    
+      <category term="CSS Magic" scheme="https://ozuit.github.io/categories/CSS-Magic/"/>
+    
+    
+      <category term="Responsive" scheme="https://ozuit.github.io/tags/Responsive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Using arrow function in React JS - Bind</title>
+    <link href="https://ozuit.github.io/React-JS/2020-04-03-using-arrow-function-in-react-js-bind/"/>
+    <id>https://ozuit.github.io/React-JS/2020-04-03-using-arrow-function-in-react-js-bind/</id>
+    <published>2020-04-03T10:54:06.000Z</published>
+    <updated>2024-03-11T07:54:03.539Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;When programming applications with React Js to handle events you need to use the bind method. There are many different ways you can do that, such as placing it in a constructor&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;(props) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;(props);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.handleClick = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.handleClick.bind(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/categories/React-JS/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="Arrow Function" scheme="https://ozuit.github.io/tags/Arrow-Function/"/>
+    
+      <category term="Bind" scheme="https://ozuit.github.io/tags/Bind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Using arrow function in React JS - Callback</title>
+    <link href="https://ozuit.github.io/React-JS/2020-04-03-using-arrow-function-in-react-js-callback/"/>
+    <id>https://ozuit.github.io/React-JS/2020-04-03-using-arrow-function-in-react-js-callback/</id>
+    <published>2020-04-03T10:16:16.000Z</published>
+    <updated>2024-03-11T07:54:03.540Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;When you need to perform setState in a callback function, for example call api and update the data as below&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;axios.get(&lt;span class=&quot;string&quot;&gt;&#39;http://yourdomain/api/get-data&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .then(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;response&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// handle success&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.setState(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            data: response.data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .catch(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;error&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// handle error&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/categories/React-JS/"/>
+    
+    
+      <category term="React JS" scheme="https://ozuit.github.io/tags/React-JS/"/>
+    
+      <category term="Arrow Function" scheme="https://ozuit.github.io/tags/Arrow-Function/"/>
+    
+      <category term="Callback" scheme="https://ozuit.github.io/tags/Callback/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native With Socket.io Client</title>
+    <link href="https://ozuit.github.io/React-Native/2020-04-02-react-native-with-socket-io-client/"/>
+    <id>https://ozuit.github.io/React-Native/2020-04-02-react-native-with-socket-io-client/</id>
+    <published>2020-04-02T14:51:01.000Z</published>
+    <updated>2024-03-11T07:54:03.538Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Install-socket-io-client-library&quot;&gt;&lt;a href=&quot;#Install-socket-io-client-library&quot; class=&quot;headerlink&quot; title=&quot;Install socket.io-client library&quot;&gt;&lt;/a&gt;Install socket.io-client library&lt;/h2&gt;&lt;p&gt;Copy and run following command at project’s root folder.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm i socket.io-client --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="React Native" scheme="https://ozuit.github.io/categories/React-Native/"/>
+    
+    
+      <category term="React Native" scheme="https://ozuit.github.io/tags/React-Native/"/>
+    
+      <category term="Socket.io" scheme="https://ozuit.github.io/tags/Socket-io/"/>
+    
+  </entry>
+  
+</feed>
