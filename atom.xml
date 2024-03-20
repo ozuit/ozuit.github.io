@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ozuit.github.io/"/>
-  <updated>2024-03-11T07:54:03.539Z</updated>
+  <updated>2024-03-20T05:00:22.986Z</updated>
   <id>https://ozuit.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Build voice assistant with React Native and Gemini AI</title>
+    <link href="https://ozuit.github.io/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/"/>
+    <id>https://ozuit.github.io/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/</id>
+    <published>2024-03-14T03:15:06.000Z</published>
+    <updated>2024-03-20T05:00:22.986Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In this tutorial, we are going to find out step by step how to build an assistant that you can chat face to face via text or voice message. Using React Native and one of the most popular language models today is &lt;a href=&quot;https://ai.google.dev/&quot;&gt;Gemini AI&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="React Native" scheme="https://ozuit.github.io/categories/React-Native/"/>
+    
+    
+      <category term="React Native" scheme="https://ozuit.github.io/tags/React-Native/"/>
+    
+      <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="Speech to Text" scheme="https://ozuit.github.io/tags/Speech-to-Text/"/>
+    
+      <category term="Text to Speech" scheme="https://ozuit.github.io/tags/Text-to-Speech/"/>
+    
+      <category term="Tutorial" scheme="https://ozuit.github.io/tags/Tutorial/"/>
+    
+  </entry>
   
   <entry>
     <title>Submit multiple apps that the same UI to App Store</title>
@@ -472,30 +501,6 @@
       <category term="Arrow Function" scheme="https://ozuit.github.io/tags/Arrow-Function/"/>
     
       <category term="Callback" scheme="https://ozuit.github.io/tags/Callback/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React Native With Socket.io Client</title>
-    <link href="https://ozuit.github.io/React-Native/2020-04-02-react-native-with-socket-io-client/"/>
-    <id>https://ozuit.github.io/React-Native/2020-04-02-react-native-with-socket-io-client/</id>
-    <published>2020-04-02T14:51:01.000Z</published>
-    <updated>2024-03-11T07:54:03.538Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Install-socket-io-client-library&quot;&gt;&lt;a href=&quot;#Install-socket-io-client-library&quot; class=&quot;headerlink&quot; title=&quot;Install socket.io-client library&quot;&gt;&lt;/a&gt;Install socket.io-client library&lt;/h2&gt;&lt;p&gt;Copy and run following command at project’s root folder.&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm i socket.io-client --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="React Native" scheme="https://ozuit.github.io/categories/React-Native/"/>
-    
-    
-      <category term="React Native" scheme="https://ozuit.github.io/tags/React-Native/"/>
-    
-      <category term="Socket.io" scheme="https://ozuit.github.io/tags/Socket-io/"/>
     
   </entry>
   

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Build voice assistant with React Native and Gemini AI - OzuIT Blog</title>
+
+
+    <meta name="description" content="In this tutorial, we are going to find out step by step how to build an assistant that you can chat face to face via text or voice message. Using React Native and one of the most popular language mode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build voice assistant with React Native and Gemini AI">
+<meta property="og:url" content="https://ozuit.github.io/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/index.html">
+<meta property="og:site_name" content="OzuIT Blog">
+<meta property="og:description" content="In this tutorial, we are going to find out step by step how to build an assistant that you can chat face to face via text or voice message. Using React Native and one of the most popular language mode">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ozuit.github.io/gallery/thumbnails/voice-assistant.webp">
+<meta property="article:published_time" content="2024-03-14T03:15:06.000Z">
+<meta property="article:modified_time" content="2024-03-20T05:00:22.986Z">
+<meta property="article:author" content="OzuIT">
+<meta property="article:tag" content="React Native">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Speech to Text">
+<meta property="article:tag" content="Text to Speech">
+<meta property="article:tag" content="Tutorial">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ozuit.github.io/gallery/thumbnails/voice-assistant.webp">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/icon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180820754-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180820754-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="OzuIT Blog" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <!-- <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/icon.svg" alt="Build voice assistant with React Native and Gemini AI" height="28">
+            
+            </a>
+        </div> -->
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/wedding">My love</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/voice-assistant.webp" alt="Build voice assistant with React Native and Gemini AI">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2024-03-14T03:15:06.000Z">2024-03-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/React-Native/">React Native</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1273 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Build voice assistant with React Native and Gemini AI
+            
+        </h1>
+        <div class="content">
+            <p>In this tutorial, we are going to find out step by step how to build an assistant that you can chat face to face via text or voice message. Using React Native and one of the most popular language models today is <a href="https://ai.google.dev/">Gemini AI</a>.</p>
+<a id="more"></a>
+
+<h1 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites:"></a>Prerequisites:</h1><ol>
+<li>Node.js and npm: Ensure that Node.js and npm are installed on your machine. Otherwise, you can follow here <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">downloading-and-installing-node-js-and-npm</a></li>
+<li>Code editor: You can use any editor you love but in this tutorial, I use <a href="https://code.visualstudio.com/download">Visual Studio Code</a></li>
+<li>Gemini AI key: Obtain your Gemini AI key by signing up at <a href="https://ai.google.dev/">https://ai.google.dev/</a></li>
+</ol>
+<h1 id="Create-a-new-React-Native-project"><a href="#Create-a-new-React-Native-project" class="headerlink" title="Create a new React Native project"></a>Create a new React Native project</h1><p>Let’s begin by creating a new project with React Native using the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx react-native init ReactNativeVoiceAssistant</span><br></pre></td></tr></table></figure>
+
+<p>To set up your environment, run, and build a React Native project, you can follow the instructions outlined in the <a href="https://reactnative.dev/docs/environment-setup">React Native Get Started guide</a>.</p>
+<h1 id="Installing-dependencies"><a href="#Installing-dependencies" class="headerlink" title="Installing dependencies"></a>Installing dependencies</h1><p>Next, we will install some packages for this project. Run the following commands one after another:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; for interaction with Rest API</span><br><span class="line">npm install axios</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; speech to text</span><br><span class="line">npm install @react-native-voice&#x2F;voice</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; react native navigation</span><br><span class="line">npm install @react-navigation&#x2F;native</span><br><span class="line">npm install react-native-screens</span><br><span class="line">npm install react-native-safe-area-context</span><br><span class="line">npm install @react-navigation&#x2F;native-stack</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; text to speech</span><br><span class="line">npm install --save react-native-tts</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; chat component</span><br><span class="line">npm install react-native-gifted-chat</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; vector icons</span><br><span class="line">npm install --save react-native-vector-icons</span><br><span class="line">npm install @types&#x2F;react-native-vector-icons</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; environment variable</span><br><span class="line">npm install -D react-native-dotenv</span><br></pre></td></tr></table></figure>
+
+<p>I will not explain this detail here, you can find more documentation on their official sites.</p>
+<h1 id="Implementing"><a href="#Implementing" class="headerlink" title="Implementing"></a>Implementing</h1><h2 id="Creating-folders-structure"><a href="#Creating-folders-structure" class="headerlink" title="Creating folders structure"></a>Creating folders structure</h2><p>In the root, create some folders: <code>src/screens</code>, <code>src/navigations</code>, <code>src/services</code> and <code>src/styles</code>. The <code>screens</code> folder contain all code related to Welcome Screen and ChatScreen, <code>navigations</code> folder for code related to navigation between screens, <code>services</code> folder for code related to logic accessing the rest API, <code>styles</code> for stylesheets.</p>
+<h2 id="Creating-service-for-accessing-the-Gemini-AI-rest-API"><a href="#Creating-service-for-accessing-the-Gemini-AI-rest-API" class="headerlink" title="Creating service for accessing the Gemini AI rest API"></a>Creating service for accessing the Gemini AI rest API</h2><p>First, create a <code>.env</code> file in the root folder and store your API key here. Please remember not to publish your API key.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">API_KEY&#x3D;YourApiKeyHere</span><br><span class="line">API_URL&#x3D;https:&#x2F;&#x2F;generativelanguage.googleapis.com&#x2F;v1beta&#x2F;models&#x2F;gemini-1.0-pro:generateContent</span><br></pre></td></tr></table></figure>
+
+<p>Next, create the file <code>src/services/AiService.js</code>. The following code will read variables from <code>.env</code> and call the rest API via Axios.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; API_KEY, API_URL &#125; <span class="keyword">from</span> <span class="string">"@env"</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">"axios"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getAnswerFromGpt = <span class="keyword">async</span> (prompts) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(prompts);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> client = axios.create(&#123;</span><br><span class="line">      headers: &#123;</span><br><span class="line">        <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">const</span> response = <span class="keyword">await</span> client.post(<span class="string">`<span class="subst">$&#123;API_URL&#125;</span>?key=<span class="subst">$&#123;API_KEY&#125;</span>`</span>, &#123;</span><br><span class="line">      contents: prompts,</span><br><span class="line">      generationConfig: &#123;</span><br><span class="line">        temperature: <span class="number">0.9</span>,</span><br><span class="line">        topK: <span class="number">1</span>,</span><br><span class="line">        topP: <span class="number">1</span>,</span><br><span class="line">        maxOutputTokens: <span class="number">2048</span>,</span><br><span class="line">        stopSequences: [],</span><br><span class="line">      &#125;,</span><br><span class="line">      safetySettings: [</span><br><span class="line">        &#123;</span><br><span class="line">          category: <span class="string">"HARM_CATEGORY_HARASSMENT"</span>,</span><br><span class="line">          threshold: <span class="string">"BLOCK_MEDIUM_AND_ABOVE"</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          category: <span class="string">"HARM_CATEGORY_HATE_SPEECH"</span>,</span><br><span class="line">          threshold: <span class="string">"BLOCK_MEDIUM_AND_ABOVE"</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          category: <span class="string">"HARM_CATEGORY_SEXUALLY_EXPLICIT"</span>,</span><br><span class="line">          threshold: <span class="string">"BLOCK_MEDIUM_AND_ABOVE"</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          category: <span class="string">"HARM_CATEGORY_DANGEROUS_CONTENT"</span>,</span><br><span class="line">          threshold: <span class="string">"BLOCK_MEDIUM_AND_ABOVE"</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> answer = response.data?.candidates[<span class="number">0</span>]?.content?.parts?.[<span class="number">0</span>]?.text;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(&#123; <span class="attr">success</span>: <span class="literal">true</span>, <span class="attr">data</span>: answer &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(&#123; <span class="attr">success</span>: <span class="literal">false</span>, <span class="attr">msg</span>: error.message &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Creating-WelcomeScreen"><a href="#Creating-WelcomeScreen" class="headerlink" title="Creating WelcomeScreen"></a>Creating WelcomeScreen</h2><p>We need to create a <code>src/screens/WelcomeScreen.tsx</code> file for logic code and a <code>src/styles/WelcomeStyle.ts</code> file for the stylesheet.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Import necessary components and libraries</span></span><br><span class="line"><span class="keyword">import</span> &#123; NavigationProp, ParamListBase, useNavigation &#125; <span class="keyword">from</span> <span class="string">'@react-navigation/native'</span>;</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Text, TouchableOpacity, View &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SafeAreaView &#125; <span class="keyword">from</span> <span class="string">'react-native-safe-area-context'</span>;</span><br><span class="line"><span class="keyword">import</span> MaterialCommunityIcons <span class="keyword">from</span> <span class="string">'react-native-vector-icons/MaterialCommunityIcons'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; styles &#125; <span class="keyword">from</span> <span class="string">'../styles/WelcomeStyle'</span>;</span><br><span class="line"><span class="keyword">const</span> WelcomeScreen = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> navigation = useNavigation&lt;NavigationProp&lt;ParamListBase&gt;&gt;();</span><br><span class="line">  <span class="keyword">const</span> handleNext = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    navigation.navigate(<span class="string">'ChatScreen'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;SafeAreaView style=&#123;styles.container&#125;&gt;</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.title&#125;&gt;React Native Voice Assistant&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Text style=&#123;styles.subtitle&#125;&gt;With Voice Command powered by OpenAI&lt;/</span>Text&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">        &lt;MaterialCommunityIcons</span></span><br><span class="line"><span class="regexp">          name="account-tie-voice"</span></span><br><span class="line"><span class="regexp">          size=&#123;200&#125;</span></span><br><span class="line"><span class="regexp">          style=&#123;&#123; marginBottom: 10, marginRight: 10, color: '#10a37f' &#125;&#125;</span></span><br><span class="line"><span class="regexp">        /</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;TouchableOpacity style=&#123;styles.button&#125; onPress=&#123;handleNext&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.buttonText&#125;&gt;Start Chat&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>TouchableOpacity&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>SafeAreaView&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> WelcomeScreen;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; StyleSheet &#125; <span class="keyword">from</span> <span class="string">"react-native"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Styles</span></span><br><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: <span class="number">1</span>,</span><br><span class="line">    justifyContent: <span class="string">"space-between"</span>,</span><br><span class="line">    alignItems: <span class="string">"center"</span>,</span><br><span class="line">    padding: <span class="number">38</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  title: &#123;</span><br><span class="line">    fontSize: <span class="number">24</span>,</span><br><span class="line">    fontWeight: <span class="string">"bold"</span>,</span><br><span class="line">    textAlign: <span class="string">"center"</span>,</span><br><span class="line">    color: <span class="string">"#10a37f"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  subtitle: &#123;</span><br><span class="line">    fontSize: <span class="number">12</span>,</span><br><span class="line">    color: <span class="string">"#666"</span>,</span><br><span class="line">    textAlign: <span class="string">"center"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  button: &#123;</span><br><span class="line">    backgroundColor: <span class="string">"#10a37f"</span>,</span><br><span class="line">    paddingVertical: <span class="number">5</span>,</span><br><span class="line">    paddingHorizontal: <span class="number">20</span>,</span><br><span class="line">    borderRadius: <span class="number">20</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  buttonText: &#123;</span><br><span class="line">    color: <span class="string">"#FFF"</span>,</span><br><span class="line">    fontSize: <span class="number">18</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; styles &#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Creating-ChatScreen"><a href="#Creating-ChatScreen" class="headerlink" title="Creating ChatScreen"></a>Creating ChatScreen</h2><p>We also create two files the same as WelcomeScreen. Put the following code to <code>src/screens/ChatScreen.tsx</code> file:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Import necessary components and libraries</span></span><br><span class="line"><span class="keyword">import</span> Voice <span class="keyword">from</span> <span class="string">'@react-native-voice/voice'</span>;</span><br><span class="line"><span class="keyword">import</span> React, &#123; useEffect, useRef, useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Platform, SafeAreaView, TouchableOpacity, View &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; GiftedChat, IMessage, Send &#125; <span class="keyword">from</span> <span class="string">'react-native-gifted-chat'</span>;</span><br><span class="line"><span class="keyword">import</span> Tts <span class="keyword">from</span> <span class="string">'react-native-tts'</span>;</span><br><span class="line"><span class="keyword">import</span> MaterialCommunityIcons <span class="keyword">from</span> <span class="string">'react-native-vector-icons/MaterialCommunityIcons'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; getAnswerFromGpt &#125; <span class="keyword">from</span> <span class="string">'../services/OpenAiService'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; styles &#125; <span class="keyword">from</span> <span class="string">'../styles/ChatStyle'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialMessages: IMessage[] = [</span><br><span class="line">  &#123;</span><br><span class="line">    _id: <span class="number">1</span>,</span><br><span class="line">    text: <span class="string">'Hi there! How can I assist you today?'</span>,</span><br><span class="line">    createdAt: <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    system: <span class="literal">true</span>,</span><br><span class="line">    user: &#123; <span class="attr">_id</span>: <span class="number">1</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ChatScreen = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [recording, setRecording] = useState(<span class="literal">false</span>);</span><br><span class="line">  <span class="keyword">const</span> [messages, setMessages] = useState(initialMessages);</span><br><span class="line">  <span class="keyword">const</span> [result, setResult] = useState(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">const</span> listPrompt = useRef&lt;any&gt;([]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onSend = <span class="function">(<span class="params">messages: IMessage[] = []</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; text &#125; = messages[<span class="number">0</span>];</span><br><span class="line">    setMessages(<span class="function"><span class="params">previousMessages</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> GiftedChat.append(previousMessages, messages, Platform.OS !== <span class="string">'web'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    processTranscription(text);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    Tts.setDefaultLanguage(<span class="string">'en_US'</span>);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    Voice.onSpeechStart = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'===speech start'</span>);</span><br><span class="line">      setRecording(<span class="literal">true</span>);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    Voice.onSpeechEnd = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'===speech end'</span>);</span><br><span class="line">      setRecording(<span class="literal">false</span>);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    Voice.onSpeechError = <span class="function">(<span class="params">e: any</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> errMsg: string = e.error?.message;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (errMsg.includes(<span class="string">'No match'</span>)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'You are not speaking!'</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(errMsg);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      setRecording(<span class="literal">false</span>);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    Voice.onSpeechResults = <span class="function">(<span class="params">e: any</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> prompt = e.value[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">if</span> (!prompt) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      setResult(prompt);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    setMessages(initialMessages);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      Voice.destroy().then(Voice.removeAllListeners);</span><br><span class="line">      Tts.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> stopRecording = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> Voice.stop();</span><br><span class="line">      setRecording(<span class="literal">false</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'== stopRecording'</span>);</span><br><span class="line">      <span class="keyword">if</span> (result) &#123;</span><br><span class="line">        <span class="keyword">const</span> newMsg = &#123;</span><br><span class="line">          _id: <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">1000000</span>),</span><br><span class="line">          text: result,</span><br><span class="line">          createdAt: <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">          user: &#123;</span><br><span class="line">            _id: <span class="number">2</span>,</span><br><span class="line">            name: <span class="string">'User'</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> newMessage = [newMsg];</span><br><span class="line"></span><br><span class="line">        setMessages(<span class="function"><span class="params">previousMessages</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> GiftedChat.append(previousMessages, newMessage, Platform.OS !== <span class="string">'web'</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        processTranscription(result);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error: any) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'== eror when stop: '</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> startRecording = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'== startRecording '</span>);</span><br><span class="line">    setRecording(<span class="literal">true</span>);</span><br><span class="line">    Tts.stop();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> Voice.start(<span class="string">'en_US'</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> readTheAnswer = <span class="function">(<span class="params">message: string</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'tts: '</span>, message);</span><br><span class="line">    Tts.speak(message);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> processTranscription = <span class="keyword">async</span> (prompt: string) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (prompt.trim().length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'stt: '</span>, prompt.trim());</span><br><span class="line">      listPrompt.current = [</span><br><span class="line">        ...listPrompt.current,</span><br><span class="line">        &#123;</span><br><span class="line">          role: <span class="string">'user'</span>,</span><br><span class="line">          parts: [</span><br><span class="line">            &#123;</span><br><span class="line">              text: prompt.trim(),</span><br><span class="line">            &#125;,</span><br><span class="line">          ],</span><br><span class="line">        &#125;,</span><br><span class="line">      ];</span><br><span class="line">      getAnswerFromGpt(listPrompt.current).then(<span class="function">(<span class="params">res: any</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.success) &#123;</span><br><span class="line">          <span class="keyword">const</span> newMsg = &#123;</span><br><span class="line">            _id: <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">1000000</span>),</span><br><span class="line">            text: res.data,</span><br><span class="line">            createdAt: <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">            user: &#123;</span><br><span class="line">              _id: <span class="number">1</span>,</span><br><span class="line">              name: <span class="string">'Assistant'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">const</span> newMessage = [newMsg];</span><br><span class="line">          setMessages(<span class="function"><span class="params">previousMessages</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> GiftedChat.append(previousMessages, newMessage, Platform.OS !== <span class="string">'web'</span>);</span><br><span class="line">          &#125;);</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (res.data) &#123;</span><br><span class="line">            listPrompt.current = [</span><br><span class="line">              ...listPrompt.current,</span><br><span class="line">              &#123;</span><br><span class="line">                role: <span class="string">'model'</span>,</span><br><span class="line">                parts: [</span><br><span class="line">                  &#123;</span><br><span class="line">                    text: res.data.trim(),</span><br><span class="line">                  &#125;,</span><br><span class="line">                ],</span><br><span class="line">              &#125;,</span><br><span class="line">            ];</span><br><span class="line">            readTheAnswer(res.data);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res.msg);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> renderSend = <span class="function">(<span class="params">props: any</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;&gt;</span><br><span class="line">        &lt;Send &#123;...props&#125;&gt;</span><br><span class="line">          &lt;MaterialCommunityIcons name=<span class="string">"send"</span> style=&#123;styles.buttonSend&#125; /&gt;</span><br><span class="line">        &lt;<span class="regexp">/Send&gt;</span></span><br><span class="line"><span class="regexp">        &lt;TouchableOpacity style=&#123;styles.buttonMicStyle&#125; onPress=&#123;recording ? stopRecording : startRecording&#125;&gt;</span></span><br><span class="line"><span class="regexp">          &#123;recording ? (</span></span><br><span class="line"><span class="regexp">            &lt;MaterialCommunityIcons name="stop" style=&#123;styles.buttonRecordingOff&#125; /</span>&gt;</span><br><span class="line">          ) : (</span><br><span class="line">            &lt;MaterialCommunityIcons name=<span class="string">"microphone"</span> style=&#123;styles.buttonRecordingOn&#125; /&gt;</span><br><span class="line">          )&#125;</span><br><span class="line">        &lt;<span class="regexp">/TouchableOpacity&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> scrollToBottomComponent = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">MaterialCommunityIcons</span> <span class="attr">name</span>=<span class="string">"arrow-down-circle-outline"</span> <span class="attr">size</span>=<span class="string">&#123;38&#125;</span> <span class="attr">color</span>=<span class="string">"#10a37f"</span> /&gt;</span></span>;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;SafeAreaView style=&#123;styles.container&#125;&gt;</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;GiftedChat</span><br><span class="line">          messages=&#123;messages&#125;</span><br><span class="line">          showAvatarForEveryMessage=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">          onSend=&#123;messages =&gt; onSend(messages)&#125;</span><br><span class="line">          user=&#123;&#123;</span><br><span class="line">            _id: <span class="number">2</span>,</span><br><span class="line">            name: <span class="string">'User'</span>,</span><br><span class="line">            avatar: <span class="string">''</span>,</span><br><span class="line">          &#125;&#125;</span><br><span class="line">          alwaysShowSend</span><br><span class="line">          renderSend=&#123;renderSend&#125;</span><br><span class="line">          scrollToBottom</span><br><span class="line">          scrollToBottomComponent=&#123;scrollToBottomComponent&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>SafeAreaView&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ChatScreen;</span><br></pre></td></tr></table></figure>
+
+<p>This code put into <code>src/styles/ChatStyle.ts</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; StyleSheet &#125; <span class="keyword">from</span> <span class="string">"react-native"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: <span class="number">1</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  buttonSend: &#123;</span><br><span class="line">    fontSize: <span class="number">20</span>,</span><br><span class="line">    marginBottom: <span class="number">12</span>,</span><br><span class="line">    marginRight: <span class="number">10</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  buttonMicStyle: &#123;</span><br><span class="line">    alignItems: <span class="string">"center"</span>,</span><br><span class="line">    justifyContent: <span class="string">"center"</span>,</span><br><span class="line">    alignSelf: <span class="string">"center"</span>,</span><br><span class="line">    marginRight: <span class="number">10</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  buttonRecordingOff: &#123; <span class="attr">fontSize</span>: <span class="number">25</span> &#125;,</span><br><span class="line">  buttonRecordingOn: &#123; <span class="attr">fontSize</span>: <span class="number">25</span> &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; styles &#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Creating-navigation"><a href="#Creating-navigation" class="headerlink" title="Creating navigation"></a>Creating navigation</h2><p>Create a <code>src/navigations/AppNavigation.tsx</code> file to handle navigation between screens in the application.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; NavigationContainer &#125; <span class="keyword">from</span> <span class="string">"@react-navigation/native"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createNativeStackNavigator &#125; <span class="keyword">from</span> <span class="string">"@react-navigation/native-stack"</span>;</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> ChatScreen <span class="keyword">from</span> <span class="string">"../screens/ChatScreen"</span>;</span><br><span class="line"><span class="keyword">import</span> WelcomeScreen <span class="keyword">from</span> <span class="string">"../screens/WelcomeScreen"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Stack = createNativeStackNavigator();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> AppNavigation = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;NavigationContainer&gt;</span><br><span class="line">      &lt;Stack.Navigator initialRouteName=<span class="string">"WelcomeScreen"</span>&gt;</span><br><span class="line">        &lt;Stack.Screen</span><br><span class="line">          name=<span class="string">"WelcomeScreen"</span></span><br><span class="line">          component=&#123;WelcomeScreen&#125;</span><br><span class="line">          options=&#123;&#123; <span class="attr">headerShown</span>: <span class="literal">false</span> &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Stack.Screen</span><br><span class="line">          name=<span class="string">"ChatScreen"</span></span><br><span class="line">          component=&#123;ChatScreen&#125;</span><br><span class="line">          options=&#123;&#123;</span><br><span class="line">            title: <span class="string">"Voice Assistant"</span>,</span><br><span class="line">            headerStyle: &#123;</span><br><span class="line">              backgroundColor: <span class="string">"#d8d8d8"</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            headerTintColor: <span class="string">"black"</span>,</span><br><span class="line">            headerTitleStyle: &#123;</span><br><span class="line">              fontWeight: <span class="string">"bold"</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Stack.Navigator&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>NavigationContainer&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> AppNavigation;</span><br></pre></td></tr></table></figure>
+
+<p>Next, we include the AppNavigation component in <code>App.tsx</code> file by replacing content with the following code.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; LogBox &#125; <span class="keyword">from</span> <span class="string">"react-native"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SafeAreaProvider &#125; <span class="keyword">from</span> <span class="string">"react-native-safe-area-context"</span>;</span><br><span class="line"><span class="keyword">import</span> AppNavigation <span class="keyword">from</span> <span class="string">"./src/navigations/AppNavigation"</span>;</span><br><span class="line"></span><br><span class="line">LogBox.ignoreLogs([<span class="string">"Warning: ..."</span>]); <span class="comment">// Ignore log notification by message</span></span><br><span class="line">LogBox.ignoreAllLogs(); <span class="comment">//Ignore all log notifications</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;SafeAreaProvider&gt;</span><br><span class="line">      &lt;AppNavigation /&gt;</span><br><span class="line">    &lt;<span class="regexp">/SafeAreaProvider&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Run-your-application"><a href="#Run-your-application" class="headerlink" title="Run your application"></a>Run your application</h1><p>Run on ios:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx react-native run-ios</span><br></pre></td></tr></table></figure>
+
+<p>Run on android:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx react-native run-android</span><br></pre></td></tr></table></figure>
+
+<p>Demo: <a href="https://www.upload-apk.com/MNOcITAysahht00">https://www.upload-apk.com/MNOcITAysahht00</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/AI/" rel="tag">AI</a>, <a class="has-link-grey -link" href="/tags/React-Native/" rel="tag">React Native</a>, <a class="has-link-grey -link" href="/tags/Speech-to-Text/" rel="tag">Speech to Text</a>, <a class="has-link-grey -link" href="/tags/Text-to-Speech/" rel="tag">Text to Speech</a>, <a class="has-link-grey -link" href="/tags/Tutorial/" rel="tag">Tutorial</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/">
+                <span class="level-item">Submit multiple apps that the same UI to App Store</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://ozuit.github.io/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/';
+        this.page.identifier = 'React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'ozuit-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://avatars1.githubusercontent.com/u/13793578?v=4" alt="OzuIT">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        OzuIT
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Web/App Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>HCM City - Vietnam</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            21
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            28
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ozuit" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/ozuit">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://www.facebook.com/ozu94">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/AI/" style="font-size: 18px;">AI</a> <a href="/tags/App-Store/" style="font-size: 10px;">App Store</a> <a href="/tags/Arrow-Function/" style="font-size: 12px;">Arrow Function</a> <a href="/tags/Bind/" style="font-size: 10px;">Bind</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Callback/" style="font-size: 10px;">Callback</a> <a href="/tags/Chatbot/" style="font-size: 16px;">Chatbot</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Dialogflow/" style="font-size: 16px;">Dialogflow</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Hook/" style="font-size: 10px;">Hook</a> <a href="/tags/Javascript/" style="font-size: 12px;">Javascript</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/Optimal/" style="font-size: 10px;">Optimal</a> <a href="/tags/Pipeline/" style="font-size: 10px;">Pipeline</a> <a href="/tags/React-Hook/" style="font-size: 10px;">React Hook</a> <a href="/tags/React-JS/" style="font-size: 20px;">React JS</a> <a href="/tags/React-Native/" style="font-size: 14px;">React Native</a> <a href="/tags/Redux-Tool-Kit/" style="font-size: 10px;">Redux Tool Kit</a> <a href="/tags/Responsive/" style="font-size: 10px;">Responsive</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/Speech-to-Text/" style="font-size: 10px;">Speech to Text</a> <a href="/tags/Text-to-Speech/" style="font-size: 10px;">Text to Speech</a> <a href="/tags/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tags/gRPC-web/" style="font-size: 10px;">gRPC-web</a> <a href="/tags/grpc/" style="font-size: 10px;">grpc</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/threads/" style="font-size: 10px;">threads</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/voice-assistant.webp" alt="Build voice assistant with React Native and Gemini AI">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-03-14T03:15:06.000Z">2024-03-14</time></div>
+                    <a href="/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Build voice assistant with React Native and Gemini AI</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-Native/">React Native</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/submit-multiple-apps-that-the-same-UI-to-App-Store.png" alt="Submit multiple apps that the same UI to App Store">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-07-22T13:11:46.000Z">2022-07-22</time></div>
+                    <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Submit multiple apps that the same UI to App Store</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tuts/">Tuts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="How to call child method from parent in react">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-05T13:33:24.000Z">2022-01-05</time></div>
+                    <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="title has-link-black-ter is-size-6 has-text-weight-normal">How to call child method from parent in react</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Javascript/">Javascript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/deploy-rocket.jpg" alt="Tự tạo một react component và publish lên NPM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-24T13:14:16.000Z">2020-12-24</time></div>
+                    <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tự tạo một react component và publish lên NPM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/gitlab-ci-cd.jpg" alt="Step by step to deploy code to the server with CI/CD on Gitlab">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-23T14:56:02.000Z">2020-10-23</time></div>
+                    <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Step by step to deploy code to the server with CI/CD on Gitlab</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/DevOps/">DevOps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/AI/">
+            <span class="level-start">
+                <span class="level-item">AI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS-Magic/">
+            <span class="level-start">
+                <span class="level-item">CSS Magic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DevOps/">
+            <span class="level-start">
+                <span class="level-item">DevOps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-JS/">
+            <span class="level-start">
+                <span class="level-item">React JS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-Native/">
+            <span class="level-start">
+                <span class="level-item">React Native</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tuts/">
+            <span class="level-start">
+                <span class="level-item">Tuts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/voice-assistant.webp" alt="Build voice assistant with React Native and Gemini AI">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2024-03-14T03:15:06.000Z">2024-03-14</time></div>
+                    <a href="/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Build voice assistant with React Native and Gemini AI</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-Native/">React Native</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/submit-multiple-apps-that-the-same-UI-to-App-Store.png" alt="Submit multiple apps that the same UI to App Store">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-07-22T13:11:46.000Z">2022-07-22</time></div>
+                    <a href="/Tuts/2022-07-22-submit-multiple-apps-that-the-same-UI-to-App-Store/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Submit multiple apps that the same UI to App Store</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tuts/">Tuts</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="How to call child method from parent in react">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-05T13:33:24.000Z">2022-01-05</time></div>
+                    <a href="/Javascript/2022-01-05-how-to-call-child-method-from-parent-in-react/" class="title has-link-black-ter is-size-6 has-text-weight-normal">How to call child method from parent in react</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Javascript/">Javascript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/deploy-rocket.jpg" alt="Tự tạo một react component và publish lên NPM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-24T13:14:16.000Z">2020-12-24</time></div>
+                    <a href="/React-JS/2020-12-24-how-to-publish-a-react-component-to-npm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tự tạo một react component và publish lên NPM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/React-JS/">React JS</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/gitlab-ci-cd.jpg" alt="Step by step to deploy code to the server with CI/CD on Gitlab">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-23T14:56:02.000Z">2020-10-23</time></div>
+                    <a href="/DevOps/2020-10-23-setup-ci-cd-on-gitlab-to-deploy-code-to-the-server/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Step by step to deploy code to the server with CI/CD on Gitlab</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/DevOps/">DevOps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/AI/">
+            <span class="level-start">
+                <span class="level-item">AI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CSS-Magic/">
+            <span class="level-start">
+                <span class="level-item">CSS Magic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DevOps/">
+            <span class="level-start">
+                <span class="level-item">DevOps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Javascript/">
+            <span class="level-start">
+                <span class="level-item">Javascript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-JS/">
+            <span class="level-start">
+                <span class="level-item">React JS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/React-Native/">
+            <span class="level-start">
+                <span class="level-item">React Native</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tuts/">
+            <span class="level-start">
+                <span class="level-item">Tuts</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/system/">
+            <span class="level-start">
+                <span class="level-item">system</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2024/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2024</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <!-- <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/icon.svg" alt="Build voice assistant with React Native and Gemini AI" height="28">
+                
+                </a> -->
+                <p class="is-size-7">
+                &copy; 2024 OzuIT&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://ozuit.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
