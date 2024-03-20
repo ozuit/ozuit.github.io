@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ozuit.github.io/"/>
-  <updated>2024-03-20T05:00:22.986Z</updated>
+  <updated>2024-03-20T08:59:57.654Z</updated>
   <id>https://ozuit.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ozuit.github.io/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/"/>
     <id>https://ozuit.github.io/React-Native/2024-03-14-build-voice-assistant-with-react-native-and-gemini-ai/</id>
     <published>2024-03-14T03:15:06.000Z</published>
-    <updated>2024-03-20T05:00:22.986Z</updated>
+    <updated>2024-03-20T08:59:57.654Z</updated>
     
     <summary type="html">
     
@@ -33,9 +33,9 @@
       <category term="React Native" scheme="https://ozuit.github.io/categories/React-Native/"/>
     
     
-      <category term="React Native" scheme="https://ozuit.github.io/tags/React-Native/"/>
-    
       <category term="AI" scheme="https://ozuit.github.io/tags/AI/"/>
+    
+      <category term="React Native" scheme="https://ozuit.github.io/tags/React-Native/"/>
     
       <category term="Speech to Text" scheme="https://ozuit.github.io/tags/Speech-to-Text/"/>
     
